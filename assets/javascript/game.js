@@ -3,18 +3,16 @@ var win = 0;
 var lost = 0;
 var previous = 0;
 
-
-
 var resetAndStart = function(){
 
     $(".crystals").empty();
-
-   // var images = [
-     //   'C:\Users\POONAM HALANI\Documents\FullStack\unit-4-game\assets\images', 
-       // 'C:\Users\POONAM HALANI\Documents\FullStack\unit-4-game\assets\images', 
-       // 'C:\Users\POONAM HALANI\Documents\FullStack\unit-4-game\assets\images', 
-        //'C:\Users\POONAM HALANI\Documents\FullStack\unit-4-game\assets\images'
-   // ]
+    
+    var images = [
+        './assets/images/crystal1.jpg', 
+        './assets/images/crystal2.jpg', 
+        './assets/images/crystal3.jpg',
+        './assets/images/crystal4.jpg'
+    ]
 
     random_result = Math.floor(Math.random() * 120) + 19;
 
@@ -27,10 +25,11 @@ var resetAndStart = function(){
     var crystal= $("<div>");
     crystal.attr({
         "class": 'crystal', 
-        "data-random": random;
+        "data-random": random
     });
+    
     crystal.css({
-        "background-image":"url'" + images [i] + "')",
+        "background-image":"url('" + images [i] + "')",
         "background-size":"cover"
     });
 
@@ -49,7 +48,7 @@ var reset = function(){
 $(document).on('click', ".crystal", function(){
     
     var num =parseInt( $(this).attr('data-random'));
-    previous =+ num;
+    previous += num;
 
     $("#previous").html("Total Score: " + previous);
 
